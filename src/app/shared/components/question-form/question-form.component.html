@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>New Question</h1>
+<form #questionForm="ngForm" mat-dialog-content class="d-flex flex-column">
+  <mat-form-field form>
+    <mat-label>What is the new question?</mat-label>
+    <input name="prompt" matInput placeholder="Ex. What's your favorite animal?" [(ngModel)]="question.prompt"/>
+  </mat-form-field>
+
+  <mat-form-field form>
+    <mat-label>Option #1</mat-label>
+    <input name="opt-1" matInput placeholder="Otters" [(ngModel)]="question.options[0].description"/>
+  </mat-form-field>
+
+  <mat-form-field form>
+    <mat-label>Option #2</mat-label>
+    <input name="opt-2" matInput placeholder="Red Pandas" [(ngModel)]="question.options[1].description"/>
+  </mat-form-field>
+</form>
+
+<div mat-dialog-actions class="mt-3 mb-1">
+  <button type="submit" mat-raised-button color="primary" (click)="onFormSubmit()">Submit</button>
+  <button mat-raised-button>Cancel</button>
+</div>

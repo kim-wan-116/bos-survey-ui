@@ -1,0 +1,26 @@
+<div class="guest-login-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col col-lg-4">
+        <form
+          class="d-flex flex-column px-4 py-5"
+          [formGroup]="loginForm"
+          (ngSubmit)="onFormSubmit()"
+        >
+          <h1>Guest Portal</h1>
+          <mat-form-field form>
+            <mat-label>Full Name</mat-label>
+            <input formControlName="fullName" matInput placeholder="Ex. John Smith" />
+          </mat-form-field>
+
+          <div class="form-ctas d-flex flex-column text-center">
+            <button mat-raised-button color="primary">Register as Guest</button>
+            <a class="mt-4" [routerLink]="['/admin']"
+              >Not a guest? <strong>Admin Login</strong></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

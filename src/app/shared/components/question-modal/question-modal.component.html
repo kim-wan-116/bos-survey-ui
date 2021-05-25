@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Question #{{data.id}}</h1>
+<div mat-dialog-content>
+    <p>{{data.prompt}}</p>
+    <mat-radio-group class="options-group" [(ngModel)]="selectedAnswer">
+        <mat-radio-button *ngFor="let opt of data.options" [value]="opt.id">{{opt.description}}</mat-radio-button>
+    </mat-radio-group>
+</div>
+<div mat-dialog-actions class="mt-3 mb-1">
+    <button mat-raised-button color="primary" (click)="onSubmitClick()">Submit</button>
+    <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+</div>

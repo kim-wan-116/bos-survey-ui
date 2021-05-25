@@ -1,0 +1,35 @@
+<div class="guest-login-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col col-lg-4">
+        <form
+          class="d-flex flex-column px-4 py-5"
+          [formGroup]="loginForm"
+          (ngSubmit)="onFormSubmit()"
+        >
+          <h1>Admin Portal</h1>
+          <mat-form-field form>
+            <mat-label>Full Name</mat-label>
+            <input
+              formControlName="fullName"
+              matInput
+              placeholder="Ex. John Smith"
+            />
+          </mat-form-field>
+
+          <mat-form-field form>
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password"/>
+          </mat-form-field>
+
+          <div class="form-ctas d-flex flex-column text-center">
+            <button mat-raised-button color="primary">Login</button>
+            <a class="mt-4" [routerLink]="['/admin']"
+              >Not an admin? <strong>Guest Login</strong>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
